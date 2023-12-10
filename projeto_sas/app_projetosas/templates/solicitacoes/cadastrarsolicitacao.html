@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="\alunos\style.css">
+<title>Sistema de Agendamento de Salas</title>
+</head>
+<body>
+	    <form class="form" method="post" action="{% url 'listarsolicitacoes' %}">
+            {% csrf_token %}
+        <h1 class="titulo-form">Cadastro de solicitação</h1>
+
+        <div class="input-group">
+        
+            <input type="text" name="horario" class="input"  autocomplete="off" required="">
+            <label class="user-label">Horário desejado</label>
+        
+        </div>
+
+        <div class="input-group">
+        
+            <input type="text" name="descricao" class="input"  autocomplete="off" required="">
+            <label class="user-label">Descrição de solicitação:</label>
+        
+        </div>
+        <input type="hidden" name="sala_id" value="{{ sala_id }}">
+        <button class="btn-gradient">Enviar</button>
+
+    </form>
+    ID DA SALA: {{sala_id}}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="table table-bordered table-striped" >
+    <tr>
+        <th>Id:</th>
+        <th>Nome:</th>
+        <th>E-mail</th>
+    </tr>
+    {% for professor in professores %}
+    <tr>
+        <td>{{professor.id_professor}}</td>
+        <td>{{professor.nome}}</td>
+        <td>{{professor.email}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    </div>

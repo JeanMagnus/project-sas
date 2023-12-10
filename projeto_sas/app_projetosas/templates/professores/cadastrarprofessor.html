@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="\alunos\style.css">
+<title>Sistema de Agendamento de Salas</title>
+</head>
+<body>
+	    <form class="form" method="post" action="{% url 'listarprofessores' %}">
+            {% csrf_token %}
+        <h1 class="titulo-form">Cadastro de Professor</h1>
+
+        <div class="input-group">
+        
+            <input type="text" name="nome" class="input"  autocomplete="off" required="">
+            <label class="user-label">Nome</label>
+        
+        </div>
+
+        <div class="input-group">
+        
+            <input type="text" name="email" class="input"  autocomplete="off" required="">
+            <label class="user-label">E-mail</label>
+        
+        </div>
+        
+        <div class="input-group">
+        
+           <input type="password" name="senha" class="input"  autocomplete="off" required="">
+            <label class="user-label">Senha</label>
+        
+        </div>
+
+        <button class="btn-gradient">Enviar</button>
+
+    </form>
+</body>
+</html>

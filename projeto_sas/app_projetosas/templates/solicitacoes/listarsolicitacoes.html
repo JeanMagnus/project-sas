@@ -1,0 +1,38 @@
+<div class="container">
+    <table class="table table-bordered table-striped" >
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Descrição</th>
+                    <th>Setor da Sala</th>
+                    <th>Numeracao da Sala</th>
+                    <th>Aluno que solicitou</th>
+                    <th>Situação da solicitacao</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for solicitacao in solicitacoes %}
+                <tr>
+                    <td>{{solicitacao.horario}}</td>
+                    <td>{{solicitacao.descricao}}</td>
+                    <td>{{solicitacao.sala.setor}}</td>
+                    <td>{{solicitacao.sala.numeracao}}</td>
+                    <td>{{solicitacao.aluno.nome}}</td>
+                    <td>{{solicitacao.situacao}}</td>
+                    <td>
+                        <form action="{% url 'alterarsituacao' solicitacao.id_solicitacao 'deferido' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Deferir</button>
+                        </form>
+                        <form action="{% url 'alterarsituacao' solicitacao.id_solicitacao 'indeferido' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Indeferir</button>
+                        </form>
+                    </td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    </div>

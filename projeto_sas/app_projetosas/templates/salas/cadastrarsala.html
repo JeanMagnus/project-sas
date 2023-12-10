@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="\alunos\style.css">
+<title>Sistema de Agendamento de Salas</title>
+</head>
+<body>
+	    <form class="form" method="post" action="{% url 'listarsalas' %}">
+            {% csrf_token %}
+        <h1 class="titulo-form">Cadastro de Sala</h1>
+
+        <div class="input-group">
+        
+            <input type="text" name="setor" class="input"  autocomplete="off" required="">
+            <label class="user-label">Setor</label>
+        
+        </div>
+
+        <div class="input-group">
+        
+            <input type="text" name="numeracao" class="input"  autocomplete="off" required="">
+            <label class="user-label">Numeração e bloco</label>
+        
+        </div>
+
+        <div class="input-group">
+        
+            <input type="text" name="status" class="input"  autocomplete="off" required="">
+            <label class="user-label">Status</label>
+        
+        </div>
+        
+        <div class="input-group">
+        
+           <input type="password" name="horario_disp" class="input"  autocomplete="off" required="">
+            <label class="user-label">Horário disponível</label>
+        
+        </div>
+
+        <button class="btn-gradient">Enviar</button>
+
+    </form>
+</body>
+</html>

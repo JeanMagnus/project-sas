@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table table-bordered table-striped" >
+    <tr>
+        <th>Id:</th>
+        <th>Setor:</th>
+        <th>Numeração e Bloco</th>
+        <th>Status</th>
+        <th>Horário disponível para uso</th>
+    </tr>
+    {% for sala in salas %}
+    <tr>
+        <td>{{sala.id_sala}}</td>
+        <td>{{sala.setor}}</td>
+        <td>{{sala.numeracao}}</td>
+        <td>{{sala.status}}</td>
+        <td>{{sala.horario_disp}}</td>
+        
+        <td>
+            <a href="{% url 'cadastrarsolicitacao' sala_id=sala.id_sala%}">Solicitar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+    
+    </div>
