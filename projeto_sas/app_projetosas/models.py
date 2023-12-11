@@ -28,5 +28,11 @@ class Solicitacao(models.Model):
     descricao = models.TextField(max_length=255)
     situacao = models.TextField(max_length=255, default="Em análise")
     
+class Cancelamento(models.Model):
+    id_cancelamento = models.AutoField(primary_key=True)
+    Solicitacao = models.ForeignKey(Solicitacao, on_delete=models.CASCADE, default=1)
+    
 
+    
+    
 
